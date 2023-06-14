@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}聯絡我們{% endblock %}
+{% block content %}
+
+<style>
+	.background-image {
+		background-image: url('/static/images/background.jfif');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+
+<br>
+<br>
+<br>
+<main class="mt-2 d-flex justify-content-center background-image">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col text-center">
+				<h1>｜如果有任何問題，歡迎與我們聯絡！｜</h1>
+				<br>
+			</div>
+		</div>
+		<div class="row mb-2 justify-content-center">
+			<div class="col-md-6">
+				<form method="post">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<button type="submit" class="btn btn-primary">送出</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}
